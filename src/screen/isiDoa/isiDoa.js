@@ -33,9 +33,18 @@ const IsiDoa = ({route, navigation}) => {
   };
 
   return (
-    <ScrollView>
+    <View
+      style={{
+        alignItems: 'center',
+      }}>
       {data.map((item, index) => (
-        <View key={index}>
+        <View
+          key={index}
+          style={{
+            alignItems: 'center',
+            borderWidth: 2,
+            marginTop: 90,
+          }}>
           {/* <TouchableOpacity
                 key={index}
                 onPress={() =>
@@ -43,44 +52,44 @@ const IsiDoa = ({route, navigation}) => {
                     ayat: item.content,
                   })
                 }></TouchableOpacity> */}
-
-          <TouchableOpacity>
-            <Text
-              style={{
-                fontSize: 20,
-                fontFamily: 'Poppins-Bold',
-                //color: '#fff',
-              }}>
-              {item.doa}
-            </Text>
-            <Text
-              style={{
-                fontSize: 20,
-                fontFamily: 'Poppins-Bold',
-                //color: '#fff',
-              }}>
-              {item.ayat}
-            </Text>
-            <Text
-              style={{
-                fontSize: 20,
-                fontFamily: 'Poppins-Bold',
-                //color: '#fff',
-              }}>
-              {item.latin}
-            </Text>
-            <Text
-              style={{
-                fontSize: 20,
-                fontFamily: 'Poppins-Bold',
-                //color: '#fff',
-              }}>
-              {item.artinya}
-            </Text>
-          </TouchableOpacity>
+          <Text
+            style={{
+              fontSize: 25,
+              fontFamily: 'Rubik-ExtraBold',
+              margin: 10,
+              //color: '#fff',
+            }}>
+            {item.doa}
+          </Text>
+          <Text
+            style={{
+              fontSize: 25,
+              fontFamily: 'Rubik-Bold',
+              //color: '#fff',
+            }}>
+            {item.ayat}
+          </Text>
+          <Text
+            style={{
+              fontSize: 20,
+              fontFamily: 'Rubik-Light',
+              margin: 10,
+              //color: '#fff',
+            }}>
+            {item.latin}
+          </Text>
+          <Text
+            style={{
+              fontSize: 27.5,
+              fontFamily: 'Rubik-Medium',
+              margin: 10,
+              //color: '#fff',
+            }}>
+            {item.artinya}.
+          </Text>
         </View>
       ))}
-    </ScrollView>
+    </View>
   );
 };
 
