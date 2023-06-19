@@ -1,1 +1,1 @@
-tuh jangan mirip" banget
+
