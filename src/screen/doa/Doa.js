@@ -70,6 +70,7 @@ const Doa = ({route, navigation}) => {
         });
     };
 
+    //ini isi drawer
     return (
       <View>
         <View
@@ -78,108 +79,11 @@ const Doa = ({route, navigation}) => {
             justifyContent: 'center',
             height: 200,
           }}>
-          {/* <ImageBackground
-            source={require('../../assets/images/Quran.png')}
-            style={{
-              width: 300,
-              height: 325,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Text
-              style={{
-                color: '#fff',
-                fontSize: 40,
-                fontFamily: 'Poppins-ExtraBold',
-                marginTop: 275,
-              }}
-              onPress={() => alertLogin()}>
-              MY QUR'AN
-            </Text>
-          </ImageBackground> */}
+          <Text>COBA AJA</Text>
         </View>
-        {/* <View
-          style={{
-            width: '85%',
-            marginLeft: 22.5,
-          }}>
-          <TouchableOpacity
-            onPress={() => {
-              reportWa('');
-            }}
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: '#8333f2',
-              marginTop: 140,
-              borderRadius: 15,
-              height: 65,
-            }}>
-            <Icon3 name="customerservice" size={45} color={'#000'} />
-            <Text
-              style={{
-                color: '#000',
-                fontSize: 15,
-                fontFamily: 'Poppins-ExtraBold',
-                margin: 10,
-              }}>
-              REPORT A PROBLEM
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            width: '85%',
-            marginLeft: 22.5,
-          }}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('About')}
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: '#8333f2',
-              marginTop: 50,
-              borderRadius: 15,
-              height: 65,
-            }}>
-            <Icon4 name="quran" size={45} color={'#000'} />
-            <Text
-              style={{
-                color: '#000',
-                fontSize: 15,
-                fontFamily: 'Poppins-ExtraBold',
-                margin: 10,
-              }}>
-              ABOUT APLICATION
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <TouchableOpacity
-          onPress={() => drawer.current.closeDrawer()}
-          style={{
-            alignItems: 'center',
-            marginTop: 90,
-            marginLeft: 175,
-            flexDirection: 'row',
-            justifyContent: 'center',
-          }}>
-          <Text
-            style={{
-              fontFamily: 'Poppins-Bold',
-              color: '#000',
-              fontSize: 40,
-              marginTop: 25,
-            }}>
-            Exit
-          </Text>
-          <Icon3 name="arrowright" size={35} color={'#000'} />
-        </TouchableOpacity> */}
       </View>
     );
   };
-
   return (
     <DrawerLayoutAndroid
       ref={drawer}
@@ -246,6 +150,7 @@ const Doa = ({route, navigation}) => {
                   style={{
                     borderWidth: 1.7,
                     borderColor: '#fff',
+                    borderBottomColor: '#fff',
                     width: '95%',
                     height: 40,
                     paddingLeft: 45,

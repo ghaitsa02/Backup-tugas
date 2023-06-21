@@ -36,6 +36,8 @@ const IsiDoa = ({route, navigation}) => {
     <View
       style={{
         alignItems: 'center',
+        flex: 1,
+        backgroundColor: '#712EF6',
       }}>
       {data.map((item, index) => (
         <View
@@ -44,6 +46,7 @@ const IsiDoa = ({route, navigation}) => {
             alignItems: 'center',
             borderWidth: 2,
             marginTop: 90,
+            borderColor: '#fff',
           }}>
           {/* <TouchableOpacity
                 key={index}
@@ -57,7 +60,7 @@ const IsiDoa = ({route, navigation}) => {
               fontSize: 25,
               fontFamily: 'Rubik-ExtraBold',
               margin: 10,
-              //color: '#fff',
+              color: '#fff',
             }}>
             {item.doa}
           </Text>
@@ -65,7 +68,7 @@ const IsiDoa = ({route, navigation}) => {
             style={{
               fontSize: 25,
               fontFamily: 'Rubik-Bold',
-              //color: '#fff',
+              color: '#fff',
             }}>
             {item.ayat}
           </Text>
@@ -74,7 +77,7 @@ const IsiDoa = ({route, navigation}) => {
               fontSize: 20,
               fontFamily: 'Rubik-Light',
               margin: 10,
-              //color: '#fff',
+              color: '#fff',
             }}>
             {item.latin}
           </Text>
@@ -83,7 +86,7 @@ const IsiDoa = ({route, navigation}) => {
               fontSize: 27.5,
               fontFamily: 'Rubik-Medium',
               margin: 10,
-              //color: '#fff',
+              color: '#fff',
             }}>
             {item.artinya}.
           </Text>
