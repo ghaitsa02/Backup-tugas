@@ -16,14 +16,16 @@ const Splash = ({navigation}) => {
         autoPlay={true}
         loop={true}
       />
-      {/* <Text
+      <Text
         style={{
-          fontSize: 50,
-          fontFamily: 'Rubik-Bold',
-          color: '#000'
+          // fontSize: 55,
+          fontFamily: 'Rubik-ExtraBold',
+          color: '#000',
+          fontSize: 45,
+          top: '22.5%',
         }}>
-        PIT
-      </Text> */}
+        MY DOA
+      </Text>
     </View>
   );
 };
@@ -32,7 +34,7 @@ export default Splash;
 
 const styles = StyleSheet.create({
   animationContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ABFF7A',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,

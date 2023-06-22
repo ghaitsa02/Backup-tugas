@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const IsiDoa = ({route, navigation}) => {
   const [data, setData] = useState([]);
@@ -39,6 +40,13 @@ const IsiDoa = ({route, navigation}) => {
         flex: 1,
         backgroundColor: '#712EF6',
       }}>
+      <TouchableOpacity
+        onPress={() => navigation.replace('doa')}
+        style={{
+          marginRight: '90%',
+        }}>
+        <Icon name="arrowleft" size={55} color={'#000'} />
+      </TouchableOpacity>
       {data.map((item, index) => (
         <View
           key={index}
@@ -46,7 +54,7 @@ const IsiDoa = ({route, navigation}) => {
             alignItems: 'center',
             borderWidth: 2,
             marginTop: 90,
-            borderColor: '#fff',
+            borderColor: '#000',
           }}>
           {/* <TouchableOpacity
                 key={index}
@@ -60,7 +68,7 @@ const IsiDoa = ({route, navigation}) => {
               fontSize: 25,
               fontFamily: 'Rubik-ExtraBold',
               margin: 10,
-              color: '#fff',
+              color: '#000',
             }}>
             {item.doa}
           </Text>
@@ -68,7 +76,7 @@ const IsiDoa = ({route, navigation}) => {
             style={{
               fontSize: 25,
               fontFamily: 'Rubik-Bold',
-              color: '#fff',
+              color: '#000',
             }}>
             {item.ayat}
           </Text>
@@ -77,7 +85,7 @@ const IsiDoa = ({route, navigation}) => {
               fontSize: 20,
               fontFamily: 'Rubik-Light',
               margin: 10,
-              color: '#fff',
+              color: '#000',
             }}>
             {item.latin}
           </Text>
@@ -86,7 +94,7 @@ const IsiDoa = ({route, navigation}) => {
               fontSize: 27.5,
               fontFamily: 'Rubik-Medium',
               margin: 10,
-              color: '#fff',
+              color: '#000',
             }}>
             {item.artinya}.
           </Text>

@@ -80,15 +80,18 @@ const Doa = ({route, navigation}) => {
             borderBottomWidth: 3,
             backgroundColor: '#1BDF97',
           }}>
-          <ImageBackground
-            style={{
-              width: 260,
-              height: 140,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-            source={require('../../assets/images/book.png')}
-          />
+          <View>
+            <ImageBackground
+              style={{
+                width: 260,
+                height: 140,
+                // justifyContent: 'center',
+                // alignItems: 'center',
+                // // backgroundColor: '#801FEF',
+              }}
+              source={require('../../assets/images/book.png')}
+            />
+          </View>
           <Text
             style={{
               fontSize: 25,
@@ -106,6 +109,28 @@ const Doa = ({route, navigation}) => {
             height: 200,
           }}>
           <TouchableOpacity
+            onPress={() => drawer.current.closeDrawer() || setSearch(!search)}
+            style={{
+              borderWidth: 2.5,
+              borderRadius: 10,
+              width: '95%',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              flexDirection: 'row',
+              top: 25,
+            }}>
+            <Icon name="search" size={40} color={'#000'} />
+            <Text
+              style={{
+                fontSize: 25,
+                fontFamily: 'Rubik-ExtraBold',
+                color: '#000',
+                fontSize: 25,
+              }}>
+              Search Doa
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={{
               borderWidth: 2.5,
               borderRadius: 10,
@@ -114,6 +139,7 @@ const Doa = ({route, navigation}) => {
               alignItems: 'center',
               flexDirection: 'row',
               top: 25,
+              marginTop: 25,
             }}>
             <Icon3 name="customerservice" size={40} color={'#000'} />
             <Text
@@ -191,19 +217,18 @@ const Doa = ({route, navigation}) => {
             style={{
               alignItems: 'center',
             }}>
-            <Image
+            {/* <Image
               source={require('../../assets/images/pit.png')}
               style={{
                 width: 120,
                 height: 50,
                 marginTop: 2,
               }}
-            />
+            /> */}
           </View>
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-between',
             }}>
             <TouchableOpacity onPress={() => drawer.current.openDrawer()}>
               <Icon name="menu" color={'#fff'} size={45} />
@@ -215,12 +240,10 @@ const Doa = ({route, navigation}) => {
                 color: '#fff',
                 fontSize: 25,
                 top: 10,
+                marginLeft: '17.5%',
               }}>
               Doa-doa harian
             </Text>
-            <TouchableOpacity onPress={() => setSearch(!search)}>
-              <Icon name="search" size={40} color={'#fff'} />
-            </TouchableOpacity>
           </View>
           {search ? (
             <View style={{alignItems: 'center'}}>
@@ -264,7 +287,7 @@ const Doa = ({route, navigation}) => {
 
               <TouchableOpacity
                 onPress={() =>
-                  navigation.navigate('isiDoa', {
+                  navigation.replace('isiDoa', {
                     doa: item.id,
                   })
                 }
@@ -292,7 +315,6 @@ const Doa = ({route, navigation}) => {
                     />
                     <Text
                       style={{
-                        fontSize: 25,
                         fontFamily: 'Rubik-ExtraBold',
                         color: '#fff',
                         fontSize: 15,
