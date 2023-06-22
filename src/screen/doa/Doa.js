@@ -8,12 +8,13 @@ import {
   Image,
   DrawerLayoutAndroid,
   Linking,
+  ImageBackground,
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon3 from 'react-native-vector-icons/AntDesign';
-import Icon4 from 'react-native-vector-icons/FontAwesome5';
+import Icon4 from 'react-native-vector-icons/FontAwesome';
 
 const Doa = ({route, navigation}) => {
   const [search, setSearch] = useState(false);
@@ -76,10 +77,99 @@ const Doa = ({route, navigation}) => {
         <View
           style={{
             alignItems: 'center',
+            borderBottomWidth: 3,
+            backgroundColor: '#1BDF97',
+          }}>
+          <ImageBackground
+            style={{
+              width: 260,
+              height: 140,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+            source={require('../../assets/images/book.png')}
+          />
+          <Text
+            style={{
+              fontSize: 25,
+              fontFamily: 'Rubik-ExtraBold',
+              color: '#000',
+              fontSize: 25,
+            }}>
+            My Doa
+          </Text>
+        </View>
+        <View
+          style={{
+            alignItems: 'center',
             justifyContent: 'center',
             height: 200,
           }}>
-          <Text>COBA AJA</Text>
+          <TouchableOpacity
+            style={{
+              borderWidth: 2.5,
+              borderRadius: 10,
+              width: '95%',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'row',
+              top: 25,
+            }}>
+            <Icon3 name="customerservice" size={40} color={'#000'} />
+            <Text
+              style={{
+                fontSize: 25,
+                fontFamily: 'Rubik-ExtraBold',
+                color: '#000',
+                fontSize: 25,
+              }}>
+              Customer Service
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              borderWidth: 2.5,
+              borderRadius: 10,
+              width: '95%',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'row',
+              top: 25,
+              marginTop: 25,
+            }}>
+            <Icon name="book" size={40} color={'#000'} />
+            <Text
+              style={{
+                fontSize: 25,
+                fontFamily: 'Rubik-ExtraBold',
+                color: '#000',
+                fontSize: 25,
+              }}>
+              About Application
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => drawer.current.closeDrawer()}
+            style={{
+              borderWidth: 2.5,
+              borderRadius: 10,
+              width: '95%',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              flexDirection: 'row',
+              top: 300,
+            }}>
+            <Icon4 name="close" size={40} color={'#000'} />
+            <Text
+              style={{
+                fontSize: 25,
+                fontFamily: 'Rubik-ExtraBold',
+                color: '#000',
+                fontSize: 25,
+              }}>
+              Close Menu
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
