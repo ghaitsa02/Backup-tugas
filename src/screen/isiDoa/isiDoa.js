@@ -38,7 +38,7 @@ const IsiDoa = ({route, navigation}) => {
       style={{
         alignItems: 'center',
         flex: 1,
-        backgroundColor: '#712EF6',
+        backgroundColor: '#9AD0FF',
       }}>
       <TouchableOpacity
         onPress={() => navigation.replace('doa')}

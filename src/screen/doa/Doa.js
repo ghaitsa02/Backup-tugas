@@ -9,6 +9,8 @@ import {
   DrawerLayoutAndroid,
   Linking,
   ImageBackground,
+  BackHandler,
+  Alert,
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
@@ -37,6 +39,8 @@ const Doa = ({route, navigation}) => {
       setData(dataSearch);
     }
   };
+
+  //ini buat nampilkan API
   useEffect(() => {
     getApi();
   }, []);
@@ -71,6 +75,18 @@ const Doa = ({route, navigation}) => {
         });
     };
 
+    const alertLogin = () => {
+      Alert.alert('Login', 'Apakah anda ingin login?', [
+        {
+          text: 'TIDAK',
+          onPress: () => null,
+          style: 'cancel',
+        },
+        {text: 'YA', onPress: () => navigation.replace('chapter1')},
+      ]);
+      return true;
+    };
+
     //ini isi drawer
     return (
       <View>
@@ -93,6 +109,7 @@ const Doa = ({route, navigation}) => {
             />
           </View>
           <Text
+            onPress={() => alertLogin()}
             style={{
               fontSize: 25,
               fontFamily: 'Rubik-ExtraBold',
@@ -108,72 +125,78 @@ const Doa = ({route, navigation}) => {
             justifyContent: 'center',
             height: 200,
           }}>
-          <TouchableOpacity
-            onPress={() => drawer.current.closeDrawer() || setSearch(!search)}
+          <View
             style={{
-              borderWidth: 2.5,
-              borderRadius: 10,
-              width: '95%',
-              justifyContent: 'space-around',
               alignItems: 'center',
-              flexDirection: 'row',
-              top: 25,
+              marginTop: 70,
             }}>
-            <Icon name="search" size={40} color={'#000'} />
-            <Text
+            <TouchableOpacity
+              onPress={() => drawer.current.closeDrawer() || setSearch(!search)}
               style={{
-                fontSize: 25,
-                fontFamily: 'Rubik-ExtraBold',
-                color: '#000',
-                fontSize: 25,
+                borderWidth: 2.5,
+                borderRadius: 10,
+                width: '87.5%',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+                flexDirection: 'row',
+                top: 25,
               }}>
-              Search Doa
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              borderWidth: 2.5,
-              borderRadius: 10,
-              width: '95%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'row',
-              top: 25,
-              marginTop: 25,
-            }}>
-            <Icon3 name="customerservice" size={40} color={'#000'} />
-            <Text
+              <Icon name="search" size={40} color={'#000'} />
+              <Text
+                style={{
+                  fontSize: 25,
+                  fontFamily: 'Rubik-ExtraBold',
+                  color: '#000',
+                  fontSize: 25,
+                }}>
+                Search Doa
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
               style={{
-                fontSize: 25,
-                fontFamily: 'Rubik-ExtraBold',
-                color: '#000',
-                fontSize: 25,
+                borderWidth: 2.5,
+                borderRadius: 10,
+                width: '95%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'row',
+                top: 25,
+                marginTop: 25,
               }}>
-              Customer Service
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              borderWidth: 2.5,
-              borderRadius: 10,
-              width: '95%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'row',
-              top: 25,
-              marginTop: 25,
-            }}>
-            <Icon name="book" size={40} color={'#000'} />
-            <Text
+              <Icon3 name="customerservice" size={40} color={'#000'} />
+              <Text
+                style={{
+                  fontSize: 25,
+                  fontFamily: 'Rubik-ExtraBold',
+                  color: '#000',
+                  fontSize: 25,
+                }}>
+                Customer Service
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
               style={{
-                fontSize: 25,
-                fontFamily: 'Rubik-ExtraBold',
-                color: '#000',
-                fontSize: 25,
+                borderWidth: 2.5,
+                borderRadius: 10,
+                width: '95%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'row',
+                top: 25,
+                marginTop: 25,
               }}>
-              About Application
-            </Text>
-          </TouchableOpacity>
+              <Icon name="book" size={40} color={'#000'} />
+              <Text
+                style={{
+                  fontSize: 25,
+                  fontFamily: 'Rubik-ExtraBold',
+                  color: '#000',
+                  fontSize: 25,
+                }}>
+                About Application
+              </Text>
+            </TouchableOpacity>
+          </View>
           <TouchableOpacity
             onPress={() => drawer.current.closeDrawer()}
             style={{
@@ -194,6 +217,36 @@ const Doa = ({route, navigation}) => {
                 fontSize: 25,
               }}>
               Close Menu
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => BackHandler.exitApp()}
+            style={{
+              borderWidth: 2.5,
+              borderRadius: 10,
+              width: '95%',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              flexDirection: 'row',
+              top: 300,
+              marginTop: 25,
+            }}>
+            <Icon2
+              name="exit-to-app"
+              size={40}
+              color={'#000'}
+              style={{
+                marginRight: '35%',
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 25,
+                fontFamily: 'Rubik-ExtraBold',
+                color: '#000',
+                fontSize: 25,
+              }}>
+              Exit
             </Text>
           </TouchableOpacity>
         </View>
@@ -242,7 +295,7 @@ const Doa = ({route, navigation}) => {
                 top: 10,
                 marginLeft: '17.5%',
               }}>
-              Doa-doa harian
+              Doa-doa Harian
             </Text>
           </View>
           {search ? (
@@ -253,7 +306,11 @@ const Doa = ({route, navigation}) => {
                   alignItems: 'center',
                   marginBottom: 20,
                 }}>
-                <View style={{position: 'absolute', marginLeft: 10}}>
+                <View
+                  style={{
+                    position: 'absolute',
+                    marginLeft: 10,
+                  }}>
                   <Icon name="search" size={22} color="#fff" />
                 </View>
                 <TextInput
@@ -284,7 +341,6 @@ const Doa = ({route, navigation}) => {
                   ayat: item.content,
                 })
               }></TouchableOpacity> */}
-
               <TouchableOpacity
                 onPress={() =>
                   navigation.replace('isiDoa', {

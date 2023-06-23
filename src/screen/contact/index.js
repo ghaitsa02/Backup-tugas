@@ -56,17 +56,17 @@ const Contact = ({navigation}) => {
           </Text>
         </View>
 
-        {/* <TouchableOpacity
+        <TouchableOpacity
           onPress={() => drawer.current.closeDrawer()}
           style={{
             alignItems: 'flex-end',
             backgroundColor: '#4021',
           }}>
           <Icon name="arrow-right" size={45} color={'#000'} />
-        </TouchableOpacity> */}
+        </TouchableOpacity>
 
         <Text>Isi dari drawer</Text>
-        {/* <Icon2 name="customerservice" size={50} color={'#000'} /> */}
+        <Icon2 name="customerservice" size={50} color={'#000'} />
       </View>
     );
   };
@@ -149,10 +149,10 @@ const Contact = ({navigation}) => {
       renderNavigationView={navigationView}>
       <View style={styles.bungkus}>
         {/* ini header */}
-        {/* <View style={styles.bungkus2}>
+        <View style={styles.bungkus2}>
           <Icon name="user" color={'#000'} size={50} />
           <Text style={styles.dContact}>Daftar Contact</Text>
-        </View> */}
+        </View>
         <ScrollView key={index}>
           <View>
             <TouchableOpacity onPress={() => drawer.current.openDrawer()}>
@@ -204,13 +204,13 @@ const Contact = ({navigation}) => {
           ))}
         </ScrollView>
         {/* ini buat nambah contact */}
-        {/* <TouchableOpacity
+        <TouchableOpacity
           onPress={() => navigation.navigate('tambah')}
           style={styles.tTambah}>
           <Icon name="user-plus" size={45} color={'#000'} />
-        </TouchableOpacity> */}
+        </TouchableOpacity>
         {/* ini buat ngubah contact */}
-        {/* <Modal
+        <Modal
           isVisible={isModalVisible}
           animationIn={'flash'}
           animationOut={'fadeOut'}
@@ -295,7 +295,7 @@ const Contact = ({navigation}) => {
               </TouchableOpacity>
             </View>
           </View>
-        </Modal> */}
+        </Modal>
       </View>
     </DrawerLayoutAndroid>
   );
